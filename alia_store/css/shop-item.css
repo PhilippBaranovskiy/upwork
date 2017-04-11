@@ -1,0 +1,275 @@
+/*!
+ * Start Bootstrap - Shop Item (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+	padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.thumbnail img {
+	width: 100%;
+}
+
+.ratings {
+	padding-right: 10px;
+	padding-left: 10px;
+	color: #d17581;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail .product__photo {
+	min-height: 100px;
+	background: url(img_bg.png);
+}
+
+.thumbnail .caption-full {
+	padding: 6px;
+	color: #333;
+}
+
+.caption .item_name {
+	height: 40px;
+}
+
+
+.nopadding {
+	padding: 5px !important;
+	margin: 0 !important;
+}
+
+.alert--add-to-cart,
+.alert--size {
+	position: fixed;
+	top: 60px;
+	width: 80%;
+	left: 10%;
+	z-index: -1;
+}
+.alert--size {
+	top: 50%;
+	-webkit-transform: translate(0%, -50%);
+        transform: translate(0%, -50%);
+}
+.alert--add-to-cart.in,
+.alert--size.in {
+	z-index: 10;
+}
+.alert .svg-icon {
+	position: absolute;
+	top: 15px;
+	left: 20px;
+}
+.alert__inner {
+	display: block;
+	margin-left: 40px;
+}
+.alert__options {
+	margin-top: 15px;
+	margin-left: -15px;
+}
+.alert__option {
+	padding: 10px 15px;
+	background: rgba(0,0,0, .05);
+	border-radius: 40px;
+	margin: 10px;
+}
+.alert__button {
+	margin-top: 15px;
+}
+
+
+
+/*
+ *      shopping cart
+ */
+
+.shopping-cart h1 {
+	margin: 40px auto 20px;
+}
+.shopping-cart picture {
+	display: block;
+	position: relative;
+	width: 120px;
+	height: 150px;
+	overflow: hidden;
+}
+.shopping-cart picture img {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	-webkit-transform: translate(0px, -50%);
+	        transform: translate(0px, -50%);
+	top: 50%;
+}
+.shopping-cart td {
+	vertical-align: middle !important;
+}
+.shopping-cart__name {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.shopping-cart .spinner {
+	margin: 0;
+	display: inline-block;
+	-webkit-transform: scale(0.5);
+	        transform: scale(0.5);
+}
+
+.shopping-cart__total {
+	width: 100%;
+	max-width: 280px;
+	margin: 50px auto;
+	border: 1px solid gray;
+}
+.shopping-cart__total tr:first-child td {
+	border-top: 1px solid gray;
+}
+.shopping-cart__total tr:last-child td {
+	border-bottom: 1px solid gray;
+}
+.shopping-cart__total button {
+	padding: 0;
+}
+
+.svg-icon {
+	width: 20px !important;
+	height: 20px !important;
+}
+
+.icon-action {
+	width: 30px;
+	height: 30px;
+	margin: 10px 0;
+}
+
+.simpleCart_shelfItem .btn {
+	width: 100%;
+}
+
+
+/*
+ *		checkout form
+ */
+
+.shopping-cart__checkout-form {
+	display: none;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	width: 80%;
+	margin: 100px auto;
+}
+.shopping-cart__checkout-form.active {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.shopping-cart__checkout-form label {
+	margin: 5px 0;
+	display: block;
+}
+.shopping-cart__checkout-form label span,
+.shopping-cart__checkout-form label input,
+.shopping-cart__checkout-form button {
+	display: block;
+	width: 100%;
+}
+.shopping-cart__checkout-form button {
+	margin-top: 20px;
+}
+#delivery-address-input {
+	max-width: 100%;
+	min-width: 100%;
+	min-height: 80px;
+}
+
+
+/*
+ *		result popup window
+ */
+
+#order-info table tr:first-child td {
+	border-top-color: transparent;
+}
+#order-info table tr td:last-child {
+	text-align: right;
+	font-weight: bold;
+}
+#order-info .modal-footer {
+	text-align: center !important;
+}
+#order-info .modal-title {
+	position: relative;
+}
+#order-info .modal-title .svg-icon {
+	position: absolute;
+	top: 5px;
+	left: 0;
+}
+#order-info .modal-title span {
+	display: block;
+	margin: 0 0 0 30px;
+}
+#order-info .modal-body .btn {
+	width: 100%;
+}
+
+
+/*
+ *      spinner
+ */
+
+ .spinner {
+	margin: 100px auto 0;
+	width: 70px;
+	text-align: center;
+}
+
+.spinner > div {
+	width: 18px;
+	height: 18px;
+	background-color: #333;
+	border-radius: 100%;
+	display: inline-block;
+	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+	}
+
+	40% {
+		-webkit-transform: scale(1.0);
+	};
+}
+
+@keyframes sk-bouncedelay {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	40% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	};
+}

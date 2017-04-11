@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ALIA - เสื้อเชิตผู้หญิง</title>
+
+    <link href="css/base.css" rel="stylesheet">
+        
+        <!--
+            Hey man!
+            Turn this gallery.css file on or off to make gallery bigger or smaller.
+        -->
+        <link href="css/gallery_1.css" rel="stylesheet">
+	
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Facebook Pixel Code -->
+        <!-- DO NOT MODIFY -->
+        <script>
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        
+            fbq('init', '1854244601454897', {
+                em: 'insert_email_variable,'
+            });
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1854244601454897&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a class="navbar-brand" href="index.php">ALIA</a>
+                
+                <div class="navbar-brand navbar-brand--right">
+                    <a href="cart.html">
+                        <span class="simpleCart_quantity"></span>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">ขนาดเสื้อ</a>
+                    </li>
+                    <li>
+                        <a href="#">ราคา</a>
+                    </li>
+                    <li>
+                        <a href="#">รีวิว</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        
+        </div>
+        <!-- /.container -->
+    </nav>
+<div class="shopping-cart container">
+
+	<div class="row">
+		<h1 class="text-center">
+			<span class="glyphicon glyphicon-shopping-cart"></span>
+			Shopping Cart
+		</h1>
+	</div>
+
+	<div class="row">
+		<table class="table shopping-cart__table">
+<!-- 			<thead>
+				<tr>
+					<th>Product</th>
+					<th>•</th>
+					<th colspan="2">Amount</th>
+				</tr>
+			</thead> -->
+			<tfoot>
+				<tr>
+					<td></td>
+					<td>Total:</td>
+					<td colspan="2" style="text-align: right;">
+						<b style="text-decoration: underline;"
+							id="shopping-cart__total">...</b> THB
+					</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td colspan="5" style="text-align: center;">
+						<div class="spinner">
+							<div class="bounce1"></div>
+							<div class="bounce2"></div>
+							<div class="bounce3"></div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="row text-center">
+		<button class="btn btn-success show-form">Fill delivery form</button>
+	</div>
+
+	<div class="row">
+		<form action="save-order.php" method="post" class="shopping-cart__checkout-form">
+			<label>
+				<span>Name</span>
+				<input id="person_name" required type="text"
+						name="name"
+						data-value-missing="Required: custom message" />
+			</label>
+			<label>
+				<span>Telephone #</span>
+				<input required type="tel" name="phone" placeholder="+66 94 460 45 27"
+						data-value-missing="Required: custom message" />
+			</label>
+			<label>
+				<span>Where to delivery?</span>
+				<textarea required
+							id="delivery-address-input"
+							data-value-missing="Required: custom message"
+							name="address"></textarea>
+			</label>
+			<button type="submit" class="btn btn-success">Place the order</button>
+		</form>
+	</div>
+	
+</div>
+
+<script id="popup-template" type="text/x-handlebars-template">
+	<div id="order-info" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				{{#if status}}
+					<div class="modal-header bg-success">
+						<h4 class="modal-title">
+							<img src="icons/done.svg"
+								class="svg-icon"
+								alt="Done!" />
+							<span>{{data.name}}, your order has been sent!</span>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>
+							<table class="table">
+								<tbody>
+									<tr>
+										<td>Your order:</td>
+										<td>#{{data.id}}</td>
+									</tr>
+									<tr>
+										<td>Delivery address:</td>
+										<td>{{data.address}}</td>
+									</tr>
+									<tr>
+										<td>Phone:</td>
+										<td>{{data.phone}}</td>
+									</tr>
+									<tr>
+										<td>Pay in cash:</td>
+										<td>{{data.total}} THB</td>
+									</tr>
+								</tbody>
+							</table>
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary"
+								data-dismiss="modal"
+								aria-label="Close">That's cool</button>
+					</div>
+				{{else}}
+					<div class="modal-header bg-error">
+						<h4 class="modal-title">
+							<img src="icons/error.svg"
+								class="svg-icon"
+								alt="Done!" />
+							<span>{{data.name}}, something goes wrong.</span>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>
+							Please, connect our manager to let us order stuff you want for you.<br>
+						</p>
+
+						<p>
+	<a href="chat/fb.php"
+		target="_blank"
+		class="btn btn-primary">
+		
+		<img src="icons/messenger.svg"
+			class="svg-icon"
+			alt="คลิก! สั่งทาง Facebook" />
+		<span>คลิก! สั่งทาง Facebook</span>
+	</a>
+</p>
+<p>
+	<a href="chat/line.php"
+		target="_blank"
+		class="btn btn-primary">
+		
+		<img src="icons/line.svg"
+			class="svg-icon"
+			alt="คลิก! สั่งทาง Line" />
+		<span>คลิก! สั่งทาง Line</span>
+	</a>
+</p>					
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default"
+								data-dismiss="modal"
+								aria-label="Close">Close</button>
+					</div>
+				{{/if}}
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</script>
+
+<script id="cart-template" type="text/x-handlebars-template">
+	{{#if items.length}}
+		{{#each items}}
+		<tr>
+			<td rowspan="3">
+				<picture>
+					<img src="{{photo}}" alt="{{name}}" />
+				</picture>
+			</td>
+			<td colspan="3" class="shopping-cart__name">{{name}}</td>
+		</tr>
+		<tr>
+			<td>Size: <b>{{size}}</b></td>
+			<td>Quantity: <b>{{quantity}}</b></td>
+			<td rowspan="2" style="width: 50px; text-align: center;">
+				<img src="icons/plus.svg"
+						class="svg-icon icon-action"
+						alt="Remove this item"
+						onclick="APP.cart.increment('{{id}}');" />
+				<img src="icons/minus.svg"
+						class="svg-icon icon-action"
+						alt="Remove this item"
+						onclick="APP.cart.decrement('{{id}}');" />
+			</td>
+		</tr>
+		<tr>
+			<td>Price: <b>{{price}}</b> THB</td>
+			<td>Amount: <b>{{amount}}</b> THB</td>
+		</tr>
+		{{/each}}
+	{{else}}
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				<a href="index.php">Let's choose some cool stuff?</a>
+			</td>
+		</tr>
+	{{/if}}
+</script>
+
+<script>
+	var APP = APP || {};
+	APP.pageType = 'cart';
+</script>
+
+	<div class="container">
+		<hr>
+		<!-- <footer></footer> -->
+	</div>
+	<!-- /.container -->
+
+	<div class="alert alert-success alert--add-to-cart alert-dismissible fade" role="alert">
+		<img src="icons/like.svg"
+			class="svg-icon"
+			alt="Done!" />
+		<div class="alert__inner">This product has been added to the cart.</div>
+	</div>
+
+	<form action="#"
+			class="size-chooser alert alert-info alert--size alert-dismissible fade"
+			role="alert">
+		<img src="icons/help.svg"
+			class="svg-icon"
+			alt="Done!" />
+		<div class="alert__inner">
+			<div>What is your prefered size?</div>
+			<div class="alert__options">
+				<label class="alert__option">
+					<input required type="radio" name="size" value="S">
+					S
+				</label>
+				<label class="alert__option">
+					<input required type="radio" name="size" value="M">
+					M
+				</label>
+				<label class="alert__option">
+					<input required type="radio" name="size" value="L">
+					L
+				</label>
+				<label class="alert__option">
+					<input required type="radio" name="size" value="XL">
+					XL
+				</label>
+				<label class="alert__option">
+					<input required type="radio" name="size" value="2XL">
+					2XL
+				</label>
+			</div>
+			<p class="alert__button">
+				<button class="btn btn-success" type="submit">Add to cart</button>
+			</p>
+		</div>
+	</form>
+
+	<!-- vendor scripts -->
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/vendor.js"></script>
+
+	<!-- app scripts -->
+		<!-- <script src="js/app/afterAdd.js"></script>
+		<script src="js/app/askSize.js"></script>
+		<script src="js/app/addPhotoUrl.js"></script>
+		<script src="js/app/gallery.js"></script>
+		<script src="js/app/display-cart.js"></script> -->
+		
+		<script src="js/app.js"></script>
+		<script src="js/app/display-cart.js"></script>
+</body>
+</html>

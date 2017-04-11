@@ -1,0 +1,4 @@
+.product-gallery img {
+	height: 230px;
+	height: calc(100vh - 330px);
+}
