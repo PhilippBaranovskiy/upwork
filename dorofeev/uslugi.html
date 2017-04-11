@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Dorofeev</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="HandheldFriendly" content="true" />
+
+	<link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
+	<link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
+	<link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.css">
+	
+	<link rel="stylesheet" href="assets/fonts/opensans-semibold.css">
+	<link rel="stylesheet" href="assets/fonts/ubuntu.css">
+	
+	<link rel="stylesheet" href="assets/css/base.css">
+
+	<style>		
+		.section--sales {
+			background-image: url(assets/img/bg_sale__opacity.png);
+		}
+		.section--change {
+			background-image: url(assets/img/bg_change__opacity.png);
+		}
+		.section--buy {
+			background-image: url(assets/img/bg_buy__opacity.png);
+		}
+		.section--form {
+			background-image: url(assets/img/bg_form__opacity.png);
+		}
+		.section--form-office {
+			background-image: url(assets/img/bg_promo.png);
+		}
+		
+		@media only screen and (min-width: 960px) {
+			.section--sales {
+				background-image: url(assets/img/bg_sale.png);
+			}
+			.section--change {
+				background-image: url(assets/img/bg_change.png);
+			}
+			.section--buy {
+				background-image: url(assets/img/bg_buy.png);
+			}
+			.section--form {
+				background-image: url(assets/img/form__dorofeev.png), url(assets/img/bg_form__opacity.png)
+			}
+			.section--form-office {
+				background-image: url(assets/img/form-office__dorofeev.png), url(assets/img/bg_form__opacity.png)
+			}
+		}
+
+		.modal {
+			background-image: url(assets/img/bg_promo.png);
+		}
+
+		.promo {
+			background-image: url(assets/img/bg_promo.png);
+		}
+	</style>
+</head><body id="body">
+	<button type="button" class="floating-button js_scroll-to" role="banner" data-target="form-discount">
+	<img src="assets/svg/discount.svg" alt="Получить скидку %">
+</button>
+
+<!-- <button type="button" class="floating-button floating-button--top js_scroll-to" data-target="body">
+	<img src="assets/svg/arrow_down.svg" alt="Наверх ^" />
+</button> -->
+
+<section class="menu" role="navigation">
+	<ul class="menu__sub-menu" id="mainSubMenu">
+		<li class="menu__sub-menu__item menu__sub-menu__item--dropdown">
+			<a href="#" class="menu__sub-menu__item__inner">
+				Услуги
+			</a>
+			<span class="menu__sub-menu__item__icon js_toggle-subMenu">
+				<img src="assets/svg/arrow_down.svg" alt="открыть подменю" />
+			</span>
+			<ul class="menu__sub-menu" id="sub-menu__services">
+				<li class="menu__sub-menu__item">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+				</li>
+				<li class="menu__sub-menu__item menu__sub-menu__item--dropdown">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+					<span class="menu__sub-menu__item__icon js_toggle-subMenu">
+						<img src="assets/svg/arrow_down.svg" alt="открыть подменю" />
+					</span>
+					<ul class="menu__sub-menu">
+						<li class="menu__sub-menu__item">
+							<a href="#" class="menu__sub-menu__item__inner">
+								Ипотечное кредитование 3
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu__sub-menu__item active">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+				</li>
+				<li class="menu__sub-menu__item">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Новостройки</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item special">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<img class="menu__item__icon" src="content/airplane.svg" alt="иконка меню">
+				<span class="menu__sub-menu__item__inner__text">Переезд в Питер</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Отзывы</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Скидки</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Вопросы и ответы</span>
+			</a>
+		</li>
+	</ul>
+
+
+	<ul class="menu__items">
+	</ul>
+
+	<div class="menu__toggler js_toggle-menu">
+		<button class="menu__toggler__text" class="" type="button">Еще</button>
+		<div id="menu-toggle" class="menu__toggler__icon">
+	<div id="hamburger">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div id="cross">
+		<span></span>
+		<span></span>
+	</div>
+</div>		<!-- <img class="menu__toggler__icon" src="assets/svg/menu.svg" alt="иконка меню" /> -->
+	</div>
+	
+	<div class="logo"><a href="#"><img src="assets/svg/logo.svg" alt="Дорофеев"></a></div>
+	<a href="tel:+79522879172" class="button button--call call call--mobile-menu">
+		<img class="call__icon" src="assets/svg/phone-call.svg" alt="иконка меню" />
+	</a>
+</section>
+	<section class="section">
+
+	<div class="section__full-width-holder">
+
+		<div class="page">
+	
+			<h1>Ипотечное кредитование</h1>
+			
+			<p>
+				Платеж по кредиту не может превышать определенной доли ваших доходов, как правило, это 40-50 % (соотношение платеж/доход).
+			</p>
+
+			<h2>Заголовок 2</h2>
+			
+			<p>
+				Платеж по кредиту не может превышать определенной доли ваших доходов, как правило, это 40-50 % (соотношение платеж/доход).
+			</p>
+
+			<h3>Заголовок 3</h3>
+			
+			<p>
+				Платеж по кредиту не может превышать определенной доли ваших доходов, как правило, это 40-50 % (соотношение платеж/доход).
+			</p>
+
+			<h4>Заголовок 4</h4>
+
+			<p>
+				Платеж по кредиту не может превышать определенной доли ваших доходов, как правило, это 40-50 % (соотношение платеж/доход).
+			</p>
+
+			<blockquote>
+				Платеж по кредиту не может превышать определенной доли ваших доходов, как правило, это 40-50 % (соотношение платеж/доход).
+			</blockquote>
+
+			<ol>
+				<li>Платеж по кредиту не может</li>
+				<li>Изменениях в правилах</li>
+				<li>При этом из ваших доходов предварительно вычитаются налоги и расходы обязательствам (платежи по ранее полученным кредитам, займам, ссудам</li>
+			</ol>
+
+			<ul>
+				<li>Платеж по кредиту не может</li>
+				<li>Изменениях в правилах</li>
+				<li>При этом из ваших доходов предварительно вычитаются налоги и расходы обязательствам (платежи по ранее полученным кредитам, займам, ссудам</li>
+			</ul>
+
+		</div>
+	
+	</div>
+
+</section>
+	<section class="section section--form" id="form-discount">
+
+	<div class="section__full-width-holder">
+
+		<div class="section__holder section__holder--border">
+
+			<p class="section__body section__body--inside-border">
+				У вас остались вопросы? 
+				<br>
+				Напишите мне
+			</p>
+
+			<form action="" class="form form--request">
+				<input class="form__input" type="text" placeholder="Имя">
+				<input class="form__input" type="tel" placeholder="Телефон">
+				<input class="form__input" type="email" placeholder="Email">
+				<textarea class="form__input form__input--area has_error" placeholder="Ваш вопрос"></textarea>
+				<button type="submit" class="button button--request-gift">Оставить заявку</button>
+			</form>
+
+		</div>
+	</div>
+</section>
+<section class="section section--footer">
+	<div class="logo logo--footer"><a href="#"><img src="assets/svg/logo.svg" alt="Дорофеев"></a></div>	<div class="footer-info">
+	<div class="footer-info__text">Пишите мне</div>
+	<div>
+		<a href="https://vk.com/konstantin_pn" target="_blank" class="social-links__link">
+			<img src="assets/svg/vk.svg" alt="vk страница" class="social-links__link__pic social-links__link__pic--vk">
+		</a>
+		<a href="https://www.facebook.com/profile.php?id=100010750530667" target="_blank" class="social-links__link">
+			<img src="assets/svg/fb.svg" alt="Facebook страница" class="social-links__link__pic social-links__link__pic--fb">
+		</a>
+		<a href="https://ok.ru/profile/568131799882" target="_blank" class="social-links__link">
+			<img src="assets/svg/ok_ru.svg" alt="Одноклассники страница" class="social-links__link__pic social-links__link__pic--ok">
+		</a>
+	</div>
+</div>	<div class="place-order place-order--footer">
+	<div class="place-order__text">
+        +7 (952) 287-91-72
+	</div>
+	<a href="tel:+79522879172" class="button button--place-order">Звоните</a>
+	<span class="place-order__footer-text">или</span>
+</div></section>
+
+<section class="section section--form modal" id="order-a-call">
+	<h2 class="section__title">Обратный звонок</h2>
+	<form action="" class="form form--request">
+		<input class="form__input" type="tel" placeholder="Телефон" required>
+		<input class="form__input" type="text" placeholder="Имя">
+		<div class="form__input form__input--holder form__input--dropdown">
+			<select class="form__select" required>
+				<option disabled selected>Вид услуги</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+		</div>
+		<button type="submit" class="button button--request-gift">Заказать звонок</button>
+	</form>
+	<button type="button" class="modal__close">
+		<img src="assets/svg/close.svg" alt="закрыть модальное окно" />
+	</button>
+</section><section class="section section--form-office modal" id="contact-form__modal">
+
+	<div class="section__full-width-holder">
+
+		<div class="section__holder section__holder--double-size-border">
+
+			<p class="section__body section__body--inside-border">
+				Могу предложить встречу в нашем офисе,
+				который находится в самом центре Санкт-Петербурга
+				— <a target="_blank" title="Открыть на большой карте" href="https://yandex.ru/maps/2/saint-petersburg/?ncrnd=1388&mode=search&where=30.322066%2C59.936562">ул. Большая Конюшенная д.29</a>,
+				м. Невский пр.
+				<br><br>
+				либо в любом удобном для Вас месте.
+			</p>
+
+			<form action="" class="form form--office-request">
+				<input class="form__input" type="text" placeholder="Имя">
+				<div class="form__input form__input--holder form__input--dropdown">
+					<select class="form__select">
+						<option disabled selected>Вид услуги</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+				<input class="form__input has_error" type="tel" placeholder="Телефон">
+				<input class="form__input" type="email" placeholder="Email">
+				
+
+				<textarea class="form__input form__input--area has_error" placeholder="Комментарий"></textarea>
+
+				<label class="checkbox">
+					<input type="checkbox" checked name="office_is_needed">
+					<span class="checkbox__label unselect">Необходим офис</span>
+				</label>
+				
+
+				<button type="submit" class="button button--request-event">Оставить заявку</button>
+			</form>
+
+		</div>
+
+	</div>
+	<button type="button" class="modal__close">
+		<img src="assets/svg/close.svg" alt="закрыть модальное окно" />
+	</button>
+</section>
+<!-- app's scripts -->
+	<script src="assets/js/bundle.js"></script>
+
+</body></html>

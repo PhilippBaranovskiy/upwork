@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Dorofeev</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="HandheldFriendly" content="true" />
+
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="assets/css/skeleton.css">
+	<link rel="stylesheet" href="assets/css/swiper.css">
+	
+	<link rel="stylesheet" href="assets/fonts/opensans-semibold.css">
+	<link rel="stylesheet" href="assets/fonts/ubuntu.css">
+	
+	<link rel="stylesheet" href="assets/css/base.css">
+
+	<style>		
+		.section--sales {
+			background-image: url(assets/img/bg_sale__opacity.png);
+		}
+		.section--change {
+			background-image: url(assets/img/bg_change__opacity.png);
+		}
+		.section--buy {
+			background-image: url(assets/img/bg_buy__opacity.png);
+		}
+		.section--form {
+			background-image: url(assets/img/bg_form__opacity.png);
+		}
+		.section--form-office {
+			background-image: url(assets/img/bg_promo.png);
+		}
+		
+		@media only screen and (min-width: 960px) {
+			.section--sales {
+				background-image: url(assets/img/bg_sale.png);
+			}
+			.section--change {
+				background-image: url(assets/img/bg_change.png);
+			}
+			.section--buy {
+				background-image: url(assets/img/bg_buy.png);
+			}
+			.section--form {
+				background-image: url(assets/img/form__dorofeev.png), url(assets/img/bg_form__opacity.png)
+			}
+			.section--form-office {
+				background-image: url(assets/img/form-office__dorofeev.png), url(assets/img/bg_form__opacity.png)
+			}
+		}
+
+		.modal {
+			background-image: url(assets/img/bg_promo.png);
+		}
+
+		.promo {
+			background-image: url(assets/img/bg_promo.png);
+		}
+	</style>
+</head><body id="body">
+	<button type="button" class="floating-button js_scroll-to" role="banner" data-target="form-discount">
+	<img src="assets/svg/discount.svg" alt="Получить скидку %">
+</button>
+
+<!-- <button type="button" class="floating-button floating-button--top js_scroll-to" data-target="body">
+	<img src="assets/svg/arrow_down.svg" alt="Наверх ^" />
+</button> -->
+
+<section class="menu" role="navigation">
+	<ul class="menu__sub-menu" id="mainSubMenu">
+		<li class="menu__sub-menu__item menu__sub-menu__item--dropdown">
+			<a href="#" class="menu__sub-menu__item__inner">
+				Услуги
+			</a>
+			<span class="menu__sub-menu__item__icon js_toggle-subMenu">
+				<img src="assets/svg/arrow_down.svg" alt="открыть подменю" />
+			</span>
+			<ul class="menu__sub-menu" id="sub-menu__services">
+				<li class="menu__sub-menu__item">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+				</li>
+				<li class="menu__sub-menu__item menu__sub-menu__item--dropdown">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+					<span class="menu__sub-menu__item__icon js_toggle-subMenu">
+						<img src="assets/svg/arrow_down.svg" alt="открыть подменю" />
+					</span>
+					<ul class="menu__sub-menu">
+						<li class="menu__sub-menu__item">
+							<a href="#" class="menu__sub-menu__item__inner">
+								Ипотечное кредитование 3
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu__sub-menu__item active">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+				</li>
+				<li class="menu__sub-menu__item">
+					<a href="#" class="menu__sub-menu__item__inner">
+						Ипотечное кредитование 2
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Новостройки</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item special">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<img class="menu__item__icon" src="content/airplane.svg" alt="иконка меню">
+				<span class="menu__sub-menu__item__inner__text">Переезд в Питер</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Отзывы</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Скидки</span>
+			</a>
+		</li>
+		<li class="menu__sub-menu__item">
+			<a href="#" class="menu__sub-menu__item__inner">
+				<span class="menu__sub-menu__item__inner__text">Вопросы и ответы</span>
+			</a>
+		</li>
+	</ul>
+
+
+	<ul class="menu__items">
+	</ul>
+
+	<div class="menu__toggler js_toggle-menu">
+		<button class="menu__toggler__text" class="" type="button">Еще</button>
+		<div id="menu-toggle" class="menu__toggler__icon">
+	<div id="hamburger">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div id="cross">
+		<span></span>
+		<span></span>
+	</div>
+</div>		<!-- <img class="menu__toggler__icon" src="assets/svg/menu.svg" alt="иконка меню" /> -->
+	</div>
+	
+	<div class="logo"><a href="#"><img src="assets/svg/logo.svg" alt="Дорофеев"></a></div>
+	<a href="tel:+79522879172" class="button button--call call call--mobile-menu">
+		<img class="call__icon" src="assets/svg/phone-call.svg" alt="иконка меню" />
+	</a>
+</section>
+	<section class="promo" role="banner">
+	
+	<div class="place-call">
+		<a class="place-call__link" href="tel:+79522879172">+7 (952) 287-91-72<br></a>
+		<button type="button" class="button button--promo-call js_open-modal" data-target="order-a-call">Заказать звонок</button>
+	</div>
+
+	<div class="promo__banner">
+		<h1 class="promo__banner__header">Профессиональ&shy;ный риэлтор в Петербурге</h1>
+		<p class="promo__banner__body">
+			Продажа и покупка жилой недвижимости, юридическое сопровождение сделок
+		</p>
+
+		<div class="button button--promo-follow f-button unselect">
+			<a href="https://vk.com/konstantin_pn" target="_blank" class="f-button__label">
+				Добавить в друзья
+			</a>
+			<div class="f-button__actions">
+				<a href="https://vk.com/konstantin_pn" target="_blank"
+					class="social-links__link f-button__vk">
+					<img src="assets/svg/vk_white.svg" alt="vk страница" class="social-links__link__pic social-links__link__pic--vk">
+				</a>
+				<a href="https://www.facebook.com/profile.php?id=100010750530667" target="_blank"
+					class="social-links__link f-button__fb">
+					<img src="assets/svg/fb_white.svg" alt="Facebook страница" class="social-links__link__pic social-links__link__pic--fb">
+				</a>
+				<a href="https://ok.ru/profile/568131799882" target="_blank"
+					class="social-links__link f-button__ok">
+					<img src="assets/svg/ok_white.svg" alt="Одноклассники страница" class="social-links__link__pic social-links__link__pic--ok">
+				</a>
+			</div>
+		</div>
+
+		<figure class="promo__banner__photo person person--promo">
+			<img height="130" width="130" class="person__photo" src="assets/img/ellips/promo__dorofeev.png" alt="Фото Константина Дорофеева" />
+			<figcaption class="person__desc">
+				<span class="person__desc__name">Константин Дорофеев</span>
+				<span class="person__desc__title">Эксперт по недвижимости</span>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="promo__photo">
+		<img src="assets/img/promo__photo.png" alt="Фото Константина Дорофеева" />
+	</div>
+
+</section>
+	<section class="section section--sales">
+	<h2 class="section__title">Продажа жилой недвижимости</h2>
+	<div class="section__full-width-holder">
+
+		<div class="section__inner">
+			<ul class="section__list">
+				<li class="section__list__item">Бесплатная проверка денег в любом банке</li>
+				<li class="section__list__item">Продвижение объекта с помощью наработанных инструментов</li>
+				<li class="section__list__item">Личные презентации объекта каждому клиенту</li>
+				<li class="section__list__item">Подготовка необходимой документации</li>
+				<li class="section__list__item">Организация безопасной передачи денег</li>
+				<li class="section__list__item">Организация и проведение сделки</li>
+			</ul>
+			<div class="place-order">
+	<button type="button" class="button button--place-order js_open-modal" data-target="contact-form__modal">
+		Оставить заявку
+	</button>
+	<div class="place-order__text">
+		или звоните мне по телефону
+		<a href="tel:+79522879172">+7 (952) 287-91-72</a>
+	</div>
+</div>		</div>
+	</div>
+</section>	<section class="section section--buy">
+	<h2 class="section__title">Покупка жилой недвижимости</h2>
+	<div class="section__full-width-holder">
+		
+		<div class="section__inner">
+			<ul class="section__list">
+				<li class="section__list__item">Глубокий анализ рынка</li>
+				<li class="section__list__item">Подбор наиболее интересных вариантов в короткие сроки</li>
+				<li class="section__list__item">Проверка юридической чистоты объекта</li>
+				<li class="section__list__item">Переговоры с продавцом</li>
+				<li class="section__list__item">Помощь в сборе и оформлении документов</li>
+				<li class="section__list__item">Информационная и психологическая поддержка клиента</li>
+				<li class="section__list__item">Организация и проведение сделки</li>
+			</ul>
+			<div class="place-order">
+	<button type="button" class="button button--place-order js_open-modal" data-target="contact-form__modal">
+		Оставить заявку
+	</button>
+	<div class="place-order__text">
+		или звоните мне по телефону
+		<a href="tel:+79522879172">+7 (952) 287-91-72</a>
+	</div>
+</div>		</div>
+	</div>
+</section>	<section class="section section--change">
+	<h2 class="section__title">Обмен жилой недвижимости</h2>
+	<div class="section__full-width-holder">
+
+		<div class="section__inner">
+			<ul class="section__list">
+				<li class="section__list__item">Бесплатная проверка денег в любом банке</li>
+				<li class="section__list__item">Продвижение объекта с помощью наработанных инструментов</li>
+				<li class="section__list__item">Личные презентации объекта каждому клиенту</li>
+				<li class="section__list__item">Подготовка необходимой документации</li>
+				<li class="section__list__item">Организация безопасной передачи денег</li>
+				<li class="section__list__item">Организация и проведение сделки</li>
+			</ul>
+			<div class="place-order">
+	<button type="button" class="button button--place-order js_open-modal" data-target="contact-form__modal">
+		Оставить заявку
+	</button>
+	<div class="place-order__text">
+		или звоните мне по телефону
+		<a href="tel:+79522879172">+7 (952) 287-91-72</a>
+	</div>
+</div>		</div>
+	</div>
+</section>
+	<section class="section section--dark">
+	<h2 class="section__title">Новостройки</h2>
+
+	<p class="section__body">
+		Подбор квартир в новостройках Санкт-Петербурга и его окрестностях от надежных Застройщиков
+	</p>
+	
+	<ul class="section__picture-list">
+		<li class="section__picture-list__item">
+			<img class="section__picture-list__item__pic" width="130" height="130"
+					src="assets/img/ellips/1.png" alt="alternative text" />
+			<span class="section__picture-list__item__desc">Объекты от ведущих и надежных Застройщиков Санкт-Петербурга</span>
+		</li>
+		<li class="section__picture-list__item">
+			<img class="section__picture-list__item__pic" width="130" height="130"
+					src="assets/img/ellips/2.png" alt="alternative text" />
+			<span class="section__picture-list__item__desc">Работа по более чем 100 жилищным комплексам</span>
+		</li>
+		<li class="section__picture-list__item">
+			<img class="section__picture-list__item__pic" width="130" height="130"
+					src="assets/img/ellips/3.png" alt="alternative text" />
+			<span class="section__picture-list__item__desc">Информирование о проводимых акциях</span>
+		</li>
+		<li class="section__picture-list__item">
+			<img class="section__picture-list__item__pic" width="130" height="130"
+					src="assets/img/ellips/4.png" alt="alternative text" />
+			<span class="section__picture-list__item__desc">Услуги по подбору - бесплатны для покупателя</span>
+		</li>
+		<li class="section__picture-list__item">
+			<img class="section__picture-list__item__pic" width="130" height="130"
+					src="assets/img/ellips/5.png" alt="alternative text" />
+			<span class="section__picture-list__item__desc">Выбор оптимального способа оплаты и лучшего соотношения объект-цена</span>
+		</li>
+		<li class="section__picture-list__item">
+			<img class="section__picture-list__item__pic" width="130" height="130"
+					src="assets/img/ellips/6.png" alt="alternative text" />
+			<span class="section__picture-list__item__desc">Подбор и оформление ипотеки у ведущих банков - бесплатно</span>
+		</li>
+	</ul>
+
+	<div class="place-order place-order--pics">
+	<button type="button" class="button button--place-order js_open-modal" data-target="contact-form__modal">
+		Оставить заявку
+	</button>
+</div></section>
+	<section class="section section--silver" id="subsidii">
+	<h2 class="section__title">Субсидии</h2>
+
+	<p class="section__body">
+		Помощь в реализации предоставленных государственных и региональных субсидий на улучшение жилищных условий.
+	</p>
+
+	<div class="toggle">
+		<div class="toggle__holder">
+		<label class="toggle__label">
+			<input type="radio" name="radioButton_1681013760" checked />
+			<div class="toggle__label__control">Государственные</div>
+		</label>
+		<label class="toggle__label">
+			<input type="radio" name="radioButton_1681013760" />
+			<div class="toggle__label__control">Региональные</div>
+		</label>
+	</div>
+</div>
+	<div class="swiper-container subsidii__slider">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<ul class="section__picture-list section__picture-list--icons">
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/family.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Средства материнского (семейного) капитала
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/insurance.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Государственные жилищные сертификаты
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/soldier.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Военная ипотека
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/building.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Социальная ипотека
+		</span>
+	</li>
+</ul>
+
+<div class="place-action">
+	<button type="button" class="button button--blue js_open-modal" data-target="contact-form__modal">
+		Закажите бесплатную консультацию
+	</button>
+</div>			</div>
+			<div class="swiper-slide">
+				<ul class="section__picture-list section__picture-list--icons">
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/elderly.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Целевая программа Санкт-Петербурга «Молодёжи - доступное жильё»
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/apartment.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Целевая программа Санкт-Петербурга «Расселение коммунальных квартир в Санкт-Петербурге»
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/list_2.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Субсидия на улучшение жилищных условий
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/credit-card.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Целевая программа Санкт-Петербурга «Развитие долгосрочного жилищного кредитования в Санкт-Петербурге на 2002-2017 годы»
+		</span>
+	</li>
+</ul>
+
+<div class="place-action">
+	<button type="button" class="button button--blue js_open-modal" data-target="contact-form__modal">
+		Закажите бесплатную консультацию
+	</button>
+</div>			</div>
+		</div>
+	</div>
+</section>	<section class="section section--silver" id="pereustupki">
+	<h2 class="section__title">Переуступки</h2>
+
+	<p class="section__body">
+		Продажа прав требования на квартиры в новостройках (как правило на этапе когда уже дом построен или сдан), которые еще не переданы дольщику. Покупка по переуступке осуществляется по цене ниже чем у Застройщика, тем самым позволяя сэкономить деньги и дает возможность купить квартиры которых уже нет у Застройщика.
+	</p>
+
+	<div class="toggle">
+		<div class="toggle__holder">
+		<label class="toggle__label">
+			<input type="radio" name="radioButton_719685413" checked />
+			<div class="toggle__label__control">Продажа</div>
+		</label>
+		<label class="toggle__label">
+			<input type="radio" name="radioButton_719685413" />
+			<div class="toggle__label__control">Покупка</div>
+		</label>
+	</div>
+</div>
+	<div class="swiper-container pereustupki__slider">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<ul class="section__picture-list section__picture-list--icons-arrows">
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/home.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Продажа переуступок объектов, находящихся к залоге (ипотека, рассрочка)
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/users.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Поиск покупателя в оперативные сроки за максимально возможную цену
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/success_solid.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Согласование с застройщиком переуступки
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/list.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Организация сделки и взаиморасчетов
+		</span>
+	</li>
+</ul>
+
+<div class="place-order">
+	<button type="button" class="button button--place-order js_open-modal" data-target="contact-form__modal">
+		Оставить заявку
+	</button>
+</div>			</div>
+			<div class="swiper-slide">
+				<ul class="section__picture-list section__picture-list--icons-arrows">
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/house.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Помощь в получении и оформлении ипотеки
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/insurance.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Поиск квартиры в объектах от надежных Застройщиков
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/success_solid.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Проведение эффективного торга
+		</span>
+	</li>
+	<li class="section__picture-list__item">
+		<img class="section__picture-list__item__pic" width="60" height="60"
+				src="content/list.svg" alt="alternative text" />
+		<span class="section__picture-list__item__desc">
+			Организация сделки
+		</span>
+	</li>
+</ul>
+
+<div class="place-order">
+	<button type="button" class="button button--place-order js_open-modal" data-target="contact-form__modal">
+		Оставить заявку
+	</button>
+</div>			</div>
+		</div>
+	</div>
+</section>
+	<section class="section section--form" id="form-discount">
+
+	<div class="section__full-width-holder">
+
+		<div class="section__holder section__holder--border">
+
+			<p class="section__body section__body--inside-border">
+				Я предлагаю Вам оформить персональный сертификат со скидкой на мои услуги.
+			</p>
+
+			<div class="section__picture">
+				<img src="content/form_illustration.svg" alt="иконка сделки" />
+			</div>
+
+			<form action="" class="form form--request">
+				<input class="form__input" type="text" placeholder="Имя">
+				<div class="form__input form__input--holder form__input--dropdown">
+					<select class="form__select">
+						<option disabled selected>Вид услуги</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+				<input class="form__input" type="tel" placeholder="Телефон">
+				<input class="form__input" type="email" placeholder="Email">
+				<button type="submit" class="button button--request-gift">Получить сертификат</button>
+			</form>
+
+		</div>
+	</div>
+</section>	
+	<section class="section section--silver responses">
+
+	<h2 class="section__title responses__title">Отзывы</h2>
+
+	<div class="swiper-container responses__slides">
+		<div class="swiper-wrapper">
+			
+			<div class="swiper-slide">
+				
+				<p class="responses__desc section__body section__body--inside-border">
+	«Константина смело можно называть нашим семейным риэлтором»
+</p>
+
+<p class="responses__body">
+	С учётом того, что с Константином нас свела судьба много лет назад, когда мой будущий муж покупал нашу первую будущую квартиру, то Костю уже смело можно называть нашим семейным риэлтором. 
+	<br>
+	Я очень благодарна Константину за его очень щепетильный и исключительный подход к каждой задаче, проблеме, человеку и всегда с радостью рекомендую его всем друзьям и знакомым. 
+</p>
+
+<figure class="person person--response">
+<img height="130" width="130" class="person__photo" src="assets/img/ellips/1.png" alt="Фото клиента" />
+	<figcaption class="person__desc">
+		<span class="person__desc__name">
+			Василевская Ирина
+		</span>
+		<span class="person__desc__title">
+			Профессор Первого Московского Государственного Медицинского университета
+		</span>
+	</figcaption>
+</figure>				<div class="place-action">
+	<button type="button" class="button button--vk">
+		Посмотреть отзыв в
+		<img class="button__icon" src="assets/svg/vk_white.svg" alt="Иконка VK">
+	</button>
+</div>			</div>
+			
+			<div class="swiper-slide">
+				
+				<p class="responses__desc section__body section__body--inside-border">
+	«Депозитный реформаторский пафос: метод изучения рынка или подвижный объект?»
+</p>
+
+<p class="responses__body">
+	Первое полустишие, в силу третьего закона Ньютона, притягивает постиндустриализм. Франшиза иллюстрирует референдум. Олицетворение даёт более простую систему дифференциальных уравнений, если исключить институциональный повторный контакт.
+</p>
+
+<figure class="person person--response">
+<img height="130" width="130" class="person__photo" src="assets/img/ellips/1.png" alt="Фото клиента" />
+	<figcaption class="person__desc">
+		<span class="person__desc__name">
+			Василевская Ирина
+		</span>
+		<span class="person__desc__title">
+			Профессор Первого Московского Государственного Медицинского университета
+		</span>
+	</figcaption>
+</figure>				<div class="place-action">
+	<button type="button" class="button button--fb">
+		Посмотреть отзыв в
+		<img class="button__icon" src="assets/svg/fb_white.svg" alt="Иконка VK">
+	</button>
+</div>			</div>
+			
+			<div class="swiper-slide">
+				
+				<p class="responses__desc section__body section__body--inside-border">
+	«Почему непрерывно политическое учение Н. Макиавелли?»
+</p>
+
+<p class="responses__body">
+	Аллегро, например, отражает первоначальный холодный цинизм. Идеология имитирует момент. Селекция бренда, несмотря на внешние воздействия, отталкивает формирование имиджа. Магнитное поле, в силу третьего закона Ньютона, трансформирует пак-шот.
+</p>
+
+<figure class="person person--response">
+<img height="130" width="130" class="person__photo" src="assets/img/ellips/1.png" alt="Фото клиента" />
+	<figcaption class="person__desc">
+		<span class="person__desc__name">
+			Василевская Ирина
+		</span>
+		<span class="person__desc__title">
+			Профессор Первого Московского Государственного Медицинского университета
+		</span>
+	</figcaption>
+</figure>				<div class="place-action">
+	<button type="button" class="button button--ok">
+		Посмотреть отзыв в
+		<img class="button__icon" src="assets/svg/ok_white.svg" alt="Иконка VK">
+	</button>
+</div>
+			</div>
+		
+		</div>
+
+		<div class="responses__pagination swiper-pagination"></div>
+	</div>
+		
+	<div class="responses__switch responses__switch--left swiper-button-prev"></div>
+	<div class="responses__switch responses__switch--right swiper-button-next"></div>
+</section>
+	<section class="section section--form-office" id="contact-form">
+
+	<div class="section__full-width-holder">
+
+		<div class="section__holder section__holder--double-size-border">
+
+			<p class="section__body section__body--inside-border">
+				Могу предложить встречу в нашем офисе,
+				который находится в самом центре Санкт-Петербурга
+				— <a target="_blank" title="Открыть на большой карте" href="https://yandex.ru/maps/2/saint-petersburg/?ncrnd=1388&mode=search&where=30.322066%2C59.936562">ул. Большая Конюшенная д.29</a>,
+				м. Невский пр.
+				<br><br>
+				либо в любом удобном для Вас месте.
+			</p>
+
+			<form action="" class="form form--office-request">
+				<input class="form__input" type="text" placeholder="Имя">
+				<div class="form__input form__input--holder form__input--dropdown">
+					<select class="form__select">
+						<option disabled selected>Вид услуги</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+				<input class="form__input has_error" type="tel" placeholder="Телефон">
+				<input class="form__input" type="email" placeholder="Email">
+				
+
+				<textarea class="form__input form__input--area has_error" placeholder="Комментарий"></textarea>
+
+				<label class="checkbox">
+					<input type="checkbox" checked name="office_is_needed">
+					<span class="checkbox__label unselect">Необходим офис</span>
+				</label>
+				
+
+				<button type="submit" class="button button--request-event">Оставить заявку</button>
+			</form>
+
+		</div>
+
+	</div>
+</section>
+<section class="section section--footer">
+	<div class="logo logo--footer"><a href="#"><img src="assets/svg/logo.svg" alt="Дорофеев"></a></div>	<div class="footer-info">
+	<div class="footer-info__text">Пишите мне</div>
+	<div>
+		<a href="https://vk.com/konstantin_pn" target="_blank" class="social-links__link">
+			<img src="assets/svg/vk.svg" alt="vk страница" class="social-links__link__pic social-links__link__pic--vk">
+		</a>
+		<a href="https://www.facebook.com/profile.php?id=100010750530667" target="_blank" class="social-links__link">
+			<img src="assets/svg/fb.svg" alt="Facebook страница" class="social-links__link__pic social-links__link__pic--fb">
+		</a>
+		<a href="https://ok.ru/profile/568131799882" target="_blank" class="social-links__link">
+			<img src="assets/svg/ok_ru.svg" alt="Одноклассники страница" class="social-links__link__pic social-links__link__pic--ok">
+		</a>
+	</div>
+</div>	<div class="place-order place-order--footer">
+	<div class="place-order__text">
+        +7 (952) 287-91-72
+	</div>
+	<a href="tel:+79522879172" class="button button--place-order">Звоните</a>
+	<span class="place-order__footer-text">или</span>
+</div></section>
+
+<section class="section section--form modal" id="order-a-call">
+	<h2 class="section__title">Обратный звонок</h2>
+	<form action="" class="form form--request">
+		<input class="form__input" type="tel" placeholder="Телефон" required>
+		<input class="form__input" type="text" placeholder="Имя">
+		<div class="form__input form__input--holder form__input--dropdown">
+			<select class="form__select" required>
+				<option disabled selected>Вид услуги</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+		</div>
+		<button type="submit" class="button button--request-gift">Заказать звонок</button>
+	</form>
+	<button type="button" class="modal__close">
+		<img src="assets/svg/close.svg" alt="закрыть модальное окно" />
+	</button>
+</section><section class="section section--form-office modal" id="contact-form__modal">
+
+	<div class="section__full-width-holder">
+
+		<div class="section__holder section__holder--double-size-border">
+
+			<p class="section__body section__body--inside-border">
+				Могу предложить встречу в нашем офисе,
+				который находится в самом центре Санкт-Петербурга
+				— <a target="_blank" title="Открыть на большой карте" href="https://yandex.ru/maps/2/saint-petersburg/?ncrnd=1388&mode=search&where=30.322066%2C59.936562">ул. Большая Конюшенная д.29</a>,
+				м. Невский пр.
+				<br><br>
+				либо в любом удобном для Вас месте.
+			</p>
+
+			<form action="" class="form form--office-request">
+				<input class="form__input" type="text" placeholder="Имя">
+				<div class="form__input form__input--holder form__input--dropdown">
+					<select class="form__select">
+						<option disabled selected>Вид услуги</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+				<input class="form__input has_error" type="tel" placeholder="Телефон">
+				<input class="form__input" type="email" placeholder="Email">
+				
+
+				<textarea class="form__input form__input--area has_error" placeholder="Комментарий"></textarea>
+
+				<label class="checkbox">
+					<input type="checkbox" checked name="office_is_needed">
+					<span class="checkbox__label unselect">Необходим офис</span>
+				</label>
+				
+
+				<button type="submit" class="button button--request-event">Оставить заявку</button>
+			</form>
+
+		</div>
+
+	</div>
+	<button type="button" class="modal__close">
+		<img src="assets/svg/close.svg" alt="закрыть модальное окно" />
+	</button>
+</section>
+<!-- app's scripts -->
+	<script src="assets/js/bundle.js"></script>
+
+</body></html>
